@@ -1,0 +1,20 @@
+﻿ 
+
+<script>
+    //1. 使用layui模块前，全局配置一些参数
+    layui.config({
+        base: '/Content/' //设置扩展layui模块所在的目录，一般用于外部拓展
+    })
+
+    //2.模块别名拓展，使用layui模块时可以设置模块别名
+    layui.extend({
+        index: "/lib/index",
+        index2: "/lib/index"
+    }) 
+
+
+    layui.use("index2", function () {
+        var index = layui.index2;
+        index.showDialog("你好");
+    })
+</script>
